@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food | {% block title %}{% endblock title %}</title>
+    {% block css %}{% endblock css %}
+    <link rel="stylesheet" href="./static/css/base.css">
+</head>
+<body>
+    <nav>
+        <h2><i class="fi fi-rs-burger-fries logo"></i> FoodFix</h2>
+
+        <ul class="pages">
+            <a class="anchor" href="/"><li class="list">Input</li></a>
+            <a class="anchor" href="/"><li class="list">Dashboard</li></a>
+        </ul>
+
+        <ul class="registration">
+            <a class="anchor signup" href="/"><li class="list">Signup</li></a>
+            <a class="anchor login" href="/"><li class="list">Login</li></a>
+        </ul>
+    </nav>
+    {% block body %}{% endblock body %}
+</body>
+</html>
