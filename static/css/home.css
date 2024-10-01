@@ -1,0 +1,10 @@
+.landing_page{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.sec1{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
