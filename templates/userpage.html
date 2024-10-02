@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Homepage{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="./static/css/dashboard.css">
+<link rel="stylesheet" href="./static/css/userpage.css">
+{% endblock css %}
+
+{% block body %}
+    <main class="landing_page">
+        <section class="Data_input">
+            <h2 class="title">Input Types</h2>
+            <div class="cards_con">
+                <div class="card">
+                    <i class="fi fi-rr-file-csv ico"></i>
+                    <h4>CSV File</h4>
+                    <p>Provide a csv file containing data of daily mart items</p>
+                </div>
+                <div class="card">
+                    <h4>Barcode Scanner</h4>
+                    <p>Scan the barcode of the items to store the data</p>
+                </div>
+                <div class="card">
+                    <h4>Voice Input</h4>
+                    <p>Store the data using voice recordning</p>
+                </div>
+                <div class="card">
+                    <h4>Camera Input</h4>
+                    <p>Input of data using camera input in refrigerator</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock body %}
