@@ -1,0 +1,74 @@
+.landing_page{
+    background-color: whitesmoke;
+    width: 85%;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+}
+
+.cards_con{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+.card{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 20px 30px;
+    margin-left: 55px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.card1{
+    background: url("https://i.pinimg.com/564x/97/4e/80/974e80dca56651ab4a620109a5f69d0f.jpg");
+    color: white;
+}
+
+.card2{
+    background: url("https://i.pinimg.com/474x/ec/67/04/ec670448c6713e49fb7f0d6e708611af.jpg");
+    color: white;
+}
+
+.card3{
+    background: url("https://i.pinimg.com/564x/a7/7c/ee/a77cee53d177e3d782ce180a66acc931.jpg");
+    color: white;
+}
+
+.card4{
+    background: url("https://i.pinimg.com/564x/d2/40/e5/d240e5c7383903e1f3aac551c50fcb10.jpg");
+    color: white;
+}
+
+.card p, h2{
+    margin: 0;
+}
+
+#map{
+    width: 93%;
+    height: 60vh;
+    margin-left: 55px;
+    margin-top: 5px;
+}
+
+.title{
+    margin-left: 55px;
+    margin-top: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.5rem;
+}

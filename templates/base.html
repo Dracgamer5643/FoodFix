@@ -13,9 +13,9 @@
 
         <!--Navbar for DashboardPage-->
         <ul id="dashboard" class="pages">
-            <a class="anchor" href="/"><li class="list"><i class="fi fi-rr-dashboard-panel icon"></i> Dashboard</li></a>
-            <a class="anchor" href="/"><li class="list"><i class="fi fi-rs-stats icon"></i> Analysis</li></a>
-            <a class="anchor" href="/"><li class="list"><i class="fi fi-rs-truck-side icon"></i> Deliveries</li></a>
+            <a class="anchor" href="/dashboard"><li class="list"><i class="fi fi-rr-dashboard-panel icon"></i> Dashboard</li></a>
+            <a class="anchor" href="#Analysis"><li class="list"><i class="fi fi-rs-stats icon"></i> Analysis</li></a>
+            <a class="anchor" href="#Deliveries"><li class="list"><i class="fi fi-rs-truck-side icon"></i> Deliveries</li></a>
         </ul>
 
         <!--Navbar for UserPage-->
@@ -26,4 +26,6 @@
     </nav>
     {% block body %}{% endblock body %}
 </body>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+{% block script %}{% endblock script %}
 </html>

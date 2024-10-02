@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="./static/css/dashboard.css">
+
+<!--Leaflet map cnd-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+crossorigin=""></script>
+
+<!--Chart.js cnd-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock css %}
+
+{% block body %}
+<main class="landing_page">
+    <section id="Dashboard">
+        <div class="cards_con">
+            <div class="card card1">
+                <h2>450</h2>
+                <p>Total Food</p>
+            </div>
+
+            <div class="card card2">
+                <h2>250</h2>
+                <p>Expired Food</p>
+            </div>
+
+            <div class="card card3">
+                <h2>250</h2>
+                <p>Delivered Food</p>
+            </div>
+
+            <div class="card card4">
+                <h2>250</h2>
+                <p>Expired Food</p>
+            </div>
+        </div>
+
+        <h2 class="title">Live Delivery Tracking</h2>
+        <div id = "map"></div>    
+        
+    </div>
+    </section>
+
+    <section id="Analysis">
+
+    </section>
+
+    <section id="Deliveries"></section>
+</main>
+
+{% endblock body %}
+
+{% block script %}
+<script>
+    var mapOptions = {
+        center: [18.9902, 73.1277],
+        zoom: 10
+    }
+    var map = new L.map('map', mapOptions);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var latlngs = [
+        [18.9902, 73.1277],
+        [18.9898, 73.1228]
+    ];
+    var marker = L.marker([18.9902, 73.1277]);
+    marker.addTo(map);
+</script>
+{% endblock script %}
+
