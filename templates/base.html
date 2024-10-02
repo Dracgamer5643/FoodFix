@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food | {% block title %}{% endblock title %}</title>
+    <title>FoodFix | {% block title %}{% endblock title %}</title>
     {% block css %}{% endblock css %}
     <link rel="stylesheet" href="./static/css/base.css">
 </head>
 <body>
     <nav>
-        <h2><i class="fi fi-rs-burger-fries logo"></i> FoodFix</h2>
+        <img class="logo" src="static\img\logo.png" alt="logo">
 
-        <!--<ul class="pages">
-            <a class="anchor" href="/"><li class="list">Input</li></a>
-            <a class="anchor" href="/"><li class="list">Dashboard</li></a>
-        </ul>-->
+        <!--Navbar for DashboardPage-->
+        <ul id="dashboard" class="pages">
+            <a class="anchor" href="/"><li class="list"><i class="fi fi-rr-dashboard-panel icon"></i> Dashboard</li></a>
+            <a class="anchor" href="/"><li class="list"><i class="fi fi-rs-stats icon"></i> Analysis</li></a>
+            <a class="anchor" href="/"><li class="list"><i class="fi fi-rs-truck-side icon"></i> Deliveries</li></a>
+        </ul>
+
+        <!--Navbar for UserPage-->
+        <ul id="userpage" class="pages">
+            <a class="anchor" href="/"><li class="list"><i class="fi fi-rr-folder-open icon"></i> Data Input</li></a>
+            <a class="anchor" href="/"><li class="list"><i class="fi fi-rr-file-medical-alt icon"></i> Anual Report</li></a>
+        </ul>
     </nav>
     {% block body %}{% endblock body %}
 </body>

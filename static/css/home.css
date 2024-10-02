@@ -1,10 +1,36 @@
 .landing_page{
-    margin-left: 5%;
-    margin-right: 5%;
+    background-color: whitesmoke;
+    width: 85%;
 }
 
-.sec1{
+section{
     width: 100%;
     height: fit-content;
     display: flex;
+}
+
+.cards_con{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    margin: auto;
+}
+
+.card{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: aqua;
+    padding: 20px 30px;
+    margin-left: 55px;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.card p, h2{
+    margin: 0;
 }
