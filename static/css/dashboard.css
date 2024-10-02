@@ -59,7 +59,7 @@ section{
 
 #map{
     width: 93%;
-    height: 60vh;
+    height: 50vh;
     margin-left: 55px;
     margin-top: 5px;
 }
@@ -71,4 +71,107 @@ section{
     font-weight: 500;
     font-style: normal;
     font-size: 1.5rem;
+}
+
+.chart{
+    margin-left: 55px;
+}
+
+#Analysis{
+    padding-top: 5px;
+}
+
+#Analysis h2{
+    padding-bottom: 30px;
+}
+
+.Ana_input{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+#Deliveries{
+    padding-top: 5px;
+}
+
+#charts{
+    margin-left: 10px;
+    width: 10%;
+    padding: 4px;
+}
+
+.info_table{
+    margin-left: 55px;
+    width: 93%;
+    height: 55vh;
+    overflow-y: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 18px;
+    text-align: left;
+}
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+td{
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+tr:hover {background-color: lightblue;}
+
+.notifications{
+    width: 40%;
+    height: 70%;
+    margin-left: 55px;
+    overflow-y: auto;
+    border-radius: 5px;
+    border: solid 1px black;
+    margin-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.notifications h2{
+    margin-left: 0;
+    margin-top: 0;
+    position: sticky;
+    top: 0;
+    background-color: whitesmoke;
+    padding-top: 10px;
+}
+
+.notifications p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: lightblue;
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.delivery_info{
+    display: flex;
+    height: 30%;
+    width: 98%;
+}
+
+.default_info{
+    display: flex;
 }
