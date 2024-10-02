@@ -160,6 +160,15 @@ crossorigin=""></script>
 
 {% block script %}
 <script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll('.leaflet-bottom.leaflet-right');
+
+        elements.forEach(element => {
+            element.remove();
+        });
+    });
+
     var mapOptions = {
         center: [18.9902, 73.1277],
         zoom: 10
@@ -167,7 +176,7 @@ crossorigin=""></script>
     var map = new L.map('map', mapOptions);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        attributionControl: false
     }).addTo(map);
     var latlngs = [
         [18.9902, 73.1277],
