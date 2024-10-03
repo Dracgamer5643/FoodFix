@@ -8,7 +8,7 @@ import time
 from collections import deque
 
 app = Flask(__name__)
-camera = cv2.VideoCapture('https://192.168.0.101:8080/video') 
+camera = cv2.VideoCapture(0) 
 camera_active = None
 model = None
 
@@ -65,7 +65,7 @@ def userpage():
 def video_feed():
     global camera_active
     if not camera_active:
-        camera.open('https://192.168.0.101:8080/video') 
+        camera.open(0) 
         camera_active = True
     return Response(generate_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
    
@@ -160,4 +160,4 @@ if __name__ == '__main__':
     if (args.printDelay):
         delay = int(args.printDelay)
 
-    app.run(host='192.168.0.105', port=8080, debug=True, threaded=True)
+    app.run(port=8080, debug=True, threaded=True)
