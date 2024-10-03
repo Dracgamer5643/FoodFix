@@ -11,28 +11,62 @@
     <main class="landing_page">
         <section class="Data_input">
             <h2 class="title">Input Types</h2>
-            <div class="cards_con">
+            <div class="cards_con" id="csv_btn">
                 <div class="card">
                     <i class="fi fi-rr-file-csv ico"></i>
                     <h4>CSV File</h4>
                     <p>Provide a csv file containing data of daily mart items</p>
                 </div>
-                <div class="card">
+                <div class="card" id="bar_btn">
                     <i class="fi fi-rr-barcode-read ico"></i>
                     <h4>Barcode Scanner</h4>
                     <p>Scan the barcode of the items to store the data</p>
                 </div>
-                <div class="card">
+                <div class="card" id="voc_btn">
                     <i class="fi fi-rr-microphone ico"></i>
                     <h4>Voice Input</h4>
                     <p>Store the data using voice recordning</p>
                 </div>
-                <div class="card">
+                <div class="card" id="cam_btn">
                     <i class="fi fi-rr-aperture ico"></i>
                     <h4>Camera Input</h4>
                     <p>Input of data using camera input in refrigerator</p>
                 </div>
             </div>
+                <form action="{{ url_for('stop_camera') }}" method="post">
+                    <button type="submit">Stop Camera</button>
+                </form>
         </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            let isDisabled = false;
+
+            const bar_btn = document.getElementById("bar_btn")
+            bar_btn.addEventListener('click', shwbar_block);
+
+            function shwbar_block() {
+                if (isDisabled) return;
+                $.ajax({
+                    url: "{{ url_for('get_video_url') }}",  
+                    type: "GET",
+                    success: function(videoUrl) {
+   
+                        const img = document.createElement('img');
+                        img.src = videoUrl;  
+                        img.alt = "Video Stream";
+                        document.querySelector('.Data_input').appendChild(img);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error fetching video URL:", error);
+                    }
+                });
+                isDisabled = true;  
+            }
+
+            const csv_btn = document.getElementById("csv_btn")
+            const voc_btn = document.getElementById("voc_btn")
+            const cam_btn = document.getElementById("cam_btn")
+
+        </script>
     </main>
 {% endblock body %}

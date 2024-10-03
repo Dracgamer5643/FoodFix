@@ -52,7 +52,7 @@ def main_loop():
     cameraPath = int(args.cameraId)
   
   camera = cv2.VideoCapture(0)
-  camera.set(cv2.CAP_PROP_FOCUS, 100)
+
   ret, frame = camera.read()
 
   try:
