@@ -33,40 +33,107 @@
                     <p>Input of data using camera input in refrigerator</p>
                 </div>
             </div>
-                <form action="{{ url_for('stop_camera') }}" method="post">
-                    <button type="submit">Stop Camera</button>
-                </form>
+
+            <div class="input_con barcode_con"></div>
+
+            <div class="input_con voice_con">
+                <h2 class="title">Voice Input</h2>
+                <textarea name="voiceIn" id="voiceIn"></textarea>
+                <i id="record_btn" class="fi fi-rr-microphone record_btn"></i>
+                <p class="state"></p>
+            </div>
         </section>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            let isDisabled = false;
+</main>
 
-            const bar_btn = document.getElementById("bar_btn")
-            bar_btn.addEventListener('click', shwbar_block);
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    let isDisabled = false;
 
-            function shwbar_block() {
-                if (isDisabled) return;
-                $.ajax({
-                    url: "{{ url_for('get_video_url') }}",  
-                    type: "GET",
-                    success: function(videoUrl) {
-   
-                        const img = document.createElement('img');
-                        img.src = videoUrl;  
-                        img.alt = "Video Stream";
-                        document.querySelector('.Data_input').appendChild(img);
-                    },
-                    error: function(xhr, status, error) {
-                        console.error("Error fetching video URL:", error);
-                    }
-                });
-                isDisabled = true;  
+    const bar_btn = document.getElementById("bar_btn")
+    bar_btn.addEventListener('click', shwbar_block);
+
+    function shwbar_block() {
+        if (isDisabled) return;
+        $.ajax({
+            url: "{{ url_for('get_video_url') }}",  
+            type: "GET",
+            success: function(videoUrl) {
+                const img = document.createElement('img');
+                const form = document.createElement('form');
+                const btn = document.createElement('button');
+                form.action = "{{ url_for('stop_camera') }}";
+                form.method = "POST";
+                btn.type = "submit";
+                btn.textContent = "Stop Camera";
+                btn.className = "vid_btn";
+                img.src = videoUrl;  
+                img.alt = "Video Stream";
+                img.className = "video_in";
+                document.querySelector('.barcode_con').appendChild(img);
+                form.appendChild(btn);
+                document.querySelector('.barcode_con').appendChild(form);
+            },
+            error: function(xhr, status, error) {
+                console.error("Error fetching video URL:", error);
             }
+        });
+        isDisabled = true;  
+    }
 
-            const csv_btn = document.getElementById("csv_btn")
-            const voc_btn = document.getElementById("voc_btn")
-            const cam_btn = document.getElementById("cam_btn")
+    const csv_btn = document.getElementById("csv_btn")
+    const voc_btn = document.getElementById("voc_btn")
+    const cam_btn = document.getElementById("cam_btn")
 
-        </script>
-    </main>
+    //Voice Input Code:
+    const recordButton = document.getElementById('record_btn');
+    const resultDiv = document.getElementById('voiceIn');
+    const state = document.querySelector('.state');
+    const recognition = new webkitSpeechRecognition();
+
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = 'en-US';
+
+    // Start recording when the button is clicked
+    recordButton.onclick = () => {
+        recognition.start();
+        recordButton.disabled = true;
+        state.innerHTML = 'Listening...';
+    };
+
+    // Handle the result of speech recognition
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        resultDiv.innerHTML = `${transcript}`;
+        recordButton.disabled = false;
+        state.innerHTML = "Data input successfull";
+    };
+
+    // Handle errors
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error detected:', event.error);
+        resultDiv.innerHTML = 'Error occurred in recognition: ' + event.error;
+        recordButton.disabled = false;
+    };
+
+    // Handle end of speech recognition
+    recognition.onend = () => {
+        recordButton.disabled = false;
+        state.innerHTML += ' Recording stopped.';
+    };
+
+    //Container on and of:
+    voc_btn.addEventListener('click', con_control);
+
+    function con_control(){
+        let voice_con = document.querySelector(".voice_con");
+
+        if(voice_con.style.display == "" || voice_con.style.display == "none"){
+            voice_con.style.display = "block";
+        }
+        else if (voice_con.style.display == "block"){
+            voice_con.style.display = "none";
+        }
+    }
+    </script>
 {% endblock body %}

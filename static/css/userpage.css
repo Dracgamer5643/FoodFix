@@ -1,3 +1,7 @@
+section{
+    overflow-y: hidden;
+}
+
 .card{
     cursor: pointer;
     font-size: 1.1rem;
@@ -15,4 +19,66 @@
 
 .ico{
     font-size: 3rem;
+}
+
+.barcode_con{
+    padding-top: 10px;
+}
+
+.input_con{
+    width: 53%;
+    margin: auto;
+}
+
+.voice_con{
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    margin-top: 5%;
+    padding-right: 10px;
+    display: none;
+}
+
+.input_con h2{
+    margin: 0;
+}
+
+#voiceIn{
+    width: 90%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin-top: 8px;
+    padding-left: 8px;
+}
+
+.video_in{
+    width: 85%;
+}
+
+.vid_btn{
+    font-size: 1rem;
+    background-color: lightgreen;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.record_btn{
+    font-size: 2rem;
+    cursor: pointer;
+    position: relative;
+    bottom: 18px;
+    left: 5px;
+}
+
+.record_btn:hover{
+    font-size: 2.2rem;
 }
