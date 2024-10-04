@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #eef2f3;
+    color: #333;
+}
+
+
+h1 {
+    margin: 0;
+    font-size: 1.8em;
+}
+
+h2 {
+    color: #4CAF50;
+    margin: 10px 0;
+    font-size: 1.3em;
+}
+
+canvas {
+    width: 100%;
+    max-width: 600px; /* Set max width */
+    height: 300px; /* Fixed height */
+    margin: 15px auto;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    text-align: center;
+    padding: 10px;
+}
+
+input[type="file"], button {
+    padding: 8px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+input[type="file"] {
+    border: 1px solid #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#topNGOs {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #ff5722;
+}
