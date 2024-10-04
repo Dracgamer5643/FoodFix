@@ -12,7 +12,7 @@ body{
     min-height: 100vh;
     background: hsla(37, 84%, 58%, 0.681);
     background-color: rgba(15, 15, 14, 0.889);
-    background: url(images/back.avif) no-repeat ;
+    background: url("{{ url_for('static', filename='img/back.avif') }}") no-repeat;    
     background-size: cover;
     background-position: center;
 }
