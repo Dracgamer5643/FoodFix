@@ -61,6 +61,14 @@ def userpage():
     page = "userpage"
     return render_template('userpage.html', page=page)
 
+@app.route("/")
+def login():
+    return render_template('login.html')
+
+@app.route("/signup")
+def signup():
+    return render_template('Register.html')
+
 @app.route('/video_feed')
 def video_feed():
     global camera_active
@@ -144,6 +152,8 @@ def generate_frames():
                     b'Content-Type: image/jpeg\r\n\r\n' + processed_frame + b'\r\n')
                     
             time.sleep(max(0, frame_time - (time.time() - last_barcode_time)))
+
+
 
 
 if __name__ == '__main__':
