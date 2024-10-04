@@ -82,3 +82,43 @@ section{
 .record_btn:hover{
     font-size: 2.2rem;
 }
+
+.under_dev{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: red;
+    width: 68%;
+    position: relative;
+    left: 15%;
+    color: white;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.csv_con{
+    width: 30%;
+    padding-top: 90px;
+    background-color: white;
+    padding-left: 100px;
+    padding-bottom: 40px;
+    display: none;
+}
+
+.csv_con label{
+    margin: 0;
+    background-color: lightblue;
+    padding: 20px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#csvFile{
+    display: none;
+}
+
+.csv_con button{
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
