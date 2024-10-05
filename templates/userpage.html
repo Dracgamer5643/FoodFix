@@ -13,8 +13,8 @@
     <main class="landing_page">
         <section class="Data_input" id="Data_input">
             <h2 class="title">Input Types</h2>
-            <div class="cards_con" id="csv_btn">
-                <div class="card">
+            <div class="cards_con">
+                <div class="card" id="csv_btn" onclick="con_control('csv_btn')">
                     <i class="fi fi-rr-file-csv ico"></i>
                     <h4>CSV File</h4>
                     <p>Provide a csv file containing data of daily mart items</p>
@@ -24,7 +24,7 @@
                     <h4>Barcode Scanner</h4>
                     <p>Scan the barcode of the items to store the data</p>
                 </div>
-                <div class="card" id="voc_btn">
+                <div class="card" id="voc_btn" onclick="con_control('voc_btn')">
                     <i class="fi fi-rr-microphone ico"></i>
                     <h4>Voice Input</h4>
                     <p>Store the data using voice recordning</p>
@@ -145,16 +145,37 @@
     };
 
     //Container on and of:
-    voc_btn.addEventListener('click', con_control);
+    function con_control(con_id){
+        if (con_id === "voc_btn"){
+            console.log(`1st: ${con_id}`)
+            let voice_con = document.querySelector(".voice_con");
+            let barcode_con = document.querySelector(".barcode_con");
+            let csv_con = document.querySelector(".csv_con");
 
-    function con_control(){
-        let voice_con = document.querySelector(".voice_con");
-
-        if(voice_con.style.display == "" || voice_con.style.display == "none"){
-            voice_con.style.display = "block";
+            if(voice_con.style.display == "" || voice_con.style.display == "none"){
+                voice_con.style.display = "block";
+                barcode_con.style.display = "none";
+                csv_con.style.display = "none";
+            }
+            else if (voice_con.style.display == "block"){
+                voice_con.style.display = "none";
+            }
         }
-        else if (voice_con.style.display == "block"){
-            voice_con.style.display = "none";
+
+        else if(con_id === "csv_btn"){
+            console.log(`2nd: ${con_id}`)
+            let csv_con = document.querySelector(".csv_con");
+            let voice_con = document.querySelector(".voice_con");
+            let barcode_con = document.querySelector(".barcode_con");
+
+            if(csv_con.style.display == "" || csv_con.style.display == "none"){
+                csv_con.style.display = "block";
+                voice_con.style.display = "none";
+                barcode_con.style.display = "none";
+            }
+            else if (csv_con.style.display == "block"){
+                csv_con.style.display = "none";
+            }
         }
     }
     </script>
