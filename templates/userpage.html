@@ -5,11 +5,13 @@
 {% block css %}
 <link rel="stylesheet" href="./static/css/dashboard.css">
 <link rel="stylesheet" href="./static/css/userpage.css">
+<link rel="stylesheet" href="./static/css/anualReport.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 {% endblock css %}
 
 {% block body %}
     <main class="landing_page">
-        <section class="Data_input">
+        <section class="Data_input" id="Data_input">
             <h2 class="title">Input Types</h2>
             <div class="cards_con" id="csv_btn">
                 <div class="card">
@@ -54,9 +56,18 @@
                 <p class="state"></p>
             </div>
         </section>
+
+        <section class="annualReport" id="annualReport">
+            <h2 class="title">Annual Report</h2>
+            <canvas id="reportChart" width="800" height="400"></canvas>
+            <input type="file" id="csvFileInput" accept=".csv">
+            <button id="loadDataButton">Load Data</button>
+            <div id="topNGOs"></div>
+        </section>
 </main>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./static/js/anualReport.js"></script>
 <script>
     let isDisabled = false;
 

@@ -69,10 +69,6 @@ def login():
 def signup():
     return render_template('Register.html')
 
-@app.route("/annualReport")
-def annualReport():
-    return render_template('anualReport.html')
-
 @app.route('/video_feed')
 def video_feed():
     global camera_active
